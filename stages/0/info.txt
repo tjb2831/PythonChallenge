@@ -1,0 +1,12 @@
+URL:
+   www.pythonchallenge.com/pc/def/0.html
+
+Description:
+   A computer monitor with tape on it. On the tape, 2**38 is written
+
+Hint:
+   "try to change the URL address."
+
+Impressions:
+   Starting out simple. We need to calculate 2 raised to the 38. The hint
+   then implies we should replace the '0' in the URL to the actual value.
