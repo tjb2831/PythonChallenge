@@ -3,7 +3,7 @@ __pycache__/
 *.py[cod]
 
 # IPython notebook checkpoints
-.ipynb_checkpoints/*
+**/.ipynb_checkpoints
 
 # C extensions
 *.so

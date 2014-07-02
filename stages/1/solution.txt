@@ -1,0 +1,16 @@
+The mapping on the page describes a 2 letter shift on the English alphabet.
+
+Create a string representing the shifted alphabet and use that to make a translation
+table via the str.maketrans(..) function. The 'gibberish' under the image can be
+decrypted using the str.translate(table) method.
+
+See the solution.ipynb notebook for code samples. The included code samples
+demonstrate a programmatic approach to creating the rotated alphabet as well as
+the aforementioned calls.
+
+Alternatively, one could just hardcode the rotated alphabet, ie. make the string
+literal 'cdefghijklmnopqrstuvwxyzab' instead of using a list comprehension.
+
+Also, the provided solution works for the lower-case ASCII character set. It will fail
+on other character sets, and even on ASCII strings that have mixed case. The given
+cipher text is in all lower-case, so this approach is sufficient for this level.

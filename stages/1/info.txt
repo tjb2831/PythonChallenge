@@ -1,0 +1,23 @@
+URL:
+   http://www.pythonchallenge.com/pc/def/map.html
+
+Description:
+   A piece of paper is shown with the following text
+      K -> M
+      O -> Q
+      E -> G
+
+   Under the image of the paper is some (seemingly) gibberish
+
+Hint:
+   Everybody thinks twice before solving this.
+
+Impression:
+   The letters (and the not so subtle URL) implies the 3 letters on the left map
+   to the letters on the right. The difference between the pairs is 2 position
+   right shift along the alphabet.
+
+   The 'gibberish' under the image is likely cipher text created using a Ceaser
+   Cipher, left shifted by two (the decryption right shifts by 2, so the
+   encryption goes in the opposite direction)
+
