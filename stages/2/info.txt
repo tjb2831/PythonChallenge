@@ -1,0 +1,23 @@
+URL:
+   http://www.pythonchallenge.com/pc/def/ocr.html
+
+Description:
+   The image is simply an open book. But the hint...
+
+Hint:
+   recognize [sic] the characters. maybe [sic] they are in the book, but
+   MAYBE they are in the page source.
+
+Impression:
+   Clearly we need to look at the HTML source code for this stage (the page
+   source).
+
+   After the closing <html> tag for the page, there is a comment that reads
+   "find teh rare characters in the mess below:". Below that is a massive
+   (the 'mess'). The mess contains many duplicated, non-sensical characters.
+   There are a lot of different braces, punctuation, and dollar signs, among
+   other meaningless characters.
+
+   Since we're supposed to look for 'rare' characters, there must be some
+   in the mess that appear infrequently. Lets sift through the mess for
+   characters that appear once and see if it makes a useful result!
