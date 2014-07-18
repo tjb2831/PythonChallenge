@@ -1,0 +1,46 @@
+The source code of the web page contains a massive comment
+block containing the solution. The catch is that the
+block is littered with duplicated noise (punctuation,
+parenthesis, etc).
+
+There are two parts to the problem:
+   1) Extracting the block from the page source, and
+   2) Parsing the block for the unique characters
+
+To solve (1), I used PyCurl (http://pycurl.sourceforge.net/),
+a libcurl wrapper for Python. You simply create a curl object,
+point it to the URL, assign a write function which aggregates
+the packets of data (ie. the page source as raw binary data),
+and let the library go. There aren't any security considerations
+that need to be taken to configure PyCurl to work with this stage.
+
+For convenience, my write function encoded the raw bytes to UTF-8
+strings and added them to a list as binary data came in. Gathering
+all the raw data and then encoding it outside of PyCurl would
+work as well.
+
+
+To solve (2), a regular expression is used to find all HTML
+comment blocks. The regular expression used is:
+
+   <!--(.*?)-->
+
+The non-greedy qualifier on the ".*" group is needed so
+adjacent comments aren't globbed together.
+
+Once the block is isolated, a recursive function is used
+to eliminate all of the duplicate characters. This function
+is very similar to the Sieve of Eratosthenes. The string
+is scanned linearly. If a duplicate character is found at the
+current position, it and all occurrences are removed from the
+search block. Once the entire space has been exhausted, you
+are left with the unique characters, in the order they appeared
+in the original search block.
+
+See the workbook IPython Notebook for an effectively tail recursive
+version. This stage did not need the (potentially) memory
+saving version on my machine.
+
+Also in the workbook is my first attempt, which is an approach
+using dicts and tuples and enumerations. It's much more complicated
+(ie. error prone) than the recursive approach.
