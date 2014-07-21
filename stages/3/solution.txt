@@ -1,0 +1,31 @@
+This solution is very similar to the previous stage.
+
+PyCurl is used to grab the source code. The re module is
+used to isolate the comment block in which to search,
+and again to search for the solution.
+
+For this stage, we are searching for one lower case
+letter, surrounded by exactly three upper case
+letters. A first attempt used the following regex:
+
+   [A-Z]{3}([a-z])[A-Z]{3}
+
+This will search for 3 upper case letters, one lower
+case letter, and three upper case letters in a row. This
+almost works, but the following (incorrect) strings will
+match:
+
+   AAAAbCCC
+   DDDeFFFF
+
+The {n} qualifier matches as long as there are at least
+n matches; not if there are exactly n matches.
+
+To fix this, we can add the stipulation that there
+cannot be any upper case letters before or after
+the match.
+
+   [^A-Z][A-Z]{3}([a-z])[A-Z]{3}[^A-Z]
+
+Applying this regex on the search block yields the
+correct solution.

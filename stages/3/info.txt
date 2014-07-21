@@ -1,0 +1,17 @@
+URL:
+   www.pythonchallenge.com/pc/def/equality.html
+
+Description:
+   One little candle with three large candles on both sides
+
+Hint:
+   One small letter, surrounded by EXACTLY three big bodyguards
+   on each of its sides
+
+Impression:
+   Sounds like a regular expression match. Likely we need to find
+   the one lower case letter that has exactly three upper case
+   letter to its left and right. But where? Let's look at the page
+   source again... Oh. There it is..
+
+
