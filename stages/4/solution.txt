@@ -1,0 +1,37 @@
+In this stage, we start with the URL
+
+   http://www.pythonchallenge.com/pc/def/linkedlist.php?nothing=12345
+
+and the following text displayed
+
+   and the next nothing is 44827
+
+Replacing the '12345' in the URL with '44827' leads to a similar page
+with a new value for nothing. This repeats ad nauseam.
+
+To solve the stage, we'll have to programmatically traverse through
+these pages, gathering up the new 'nothing' values along the way. Again,
+pycURL and regular expressions work nicely.
+
+A traversal function is made that uses pycURL to get the 'and the next nothing
+is ...' string, then uses a regex to figure out what the new 'nothing' is.
+The URL is then updated with the new 'nothing' and the traversal continues
+until the regex fails. The last used URL is returned.
+
+The first approach is to simply use a regex looking for a non-zero length
+string of digits. Doing so, however brings to the trap URL
+
+   http://www.pythonchallenge.com/pc/def/linkedlist.php?nothing=82683
+
+which tells us we have been mislead and need to go back one. Updating the
+traversal method to return a list of URLs instead of a single URL allows us
+to check the second to last URL examined. When we go there, the page has
+a fake digit string, followed by a message to only search for 'the next nothing'.
+Updating the regex to account for the preceeding 'and the next nothing is ' text
+reveals the true solution
+
+Old regex:
+   r"\d+"
+
+Updated regex:
+   r"and the next nothing is (\d+)"

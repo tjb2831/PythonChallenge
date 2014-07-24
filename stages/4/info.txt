@@ -1,0 +1,31 @@
+URL:
+   www.pythonchallenge.com/pc/def/linkedlist.html
+      
+      which tells us to change to
+   
+   www.pythonchallenge.com/pc/def/linkedlist.php
+
+Description:
+   The picture shows a seasaw toy, but the image looks clickable!
+   Clicking brings us to a new page with the URL:
+
+      http://www.pythonchallenge.com/pc/def/linkedlist.php?nothing=12345
+
+   and the text
+
+      "and the next nothing is 44827"
+
+   When I replace the old nothing with the new nothing in the URL,
+   I get a similar page with a new, third nothing. And again gives
+   another new nothing...
+
+Hint:
+   <No hint>
+
+Impression:
+   Clearly we need to keep following the trail of 'nothings',
+   but the trail is too long to do it by hand. We need a way
+   to walk through the list programmatically.
+
+   From the looks of the page source, PyCurl and regex 
+   seem like a good starting point.
