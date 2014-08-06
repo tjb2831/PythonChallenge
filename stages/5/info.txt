@@ -1,0 +1,17 @@
+URL:
+   http://www.pythonchallenge.com/pc/def/peak.html
+
+Description:
+   An image of a hill
+
+Hint:
+   pronounce it
+
+Impression:
+   Looking at the page source, there is an html tag
+      <peakhell src="banner.p"/>
+   and a comment
+      <!-- peak hell sounds familiar ? -->
+
+   Clicking on the "banner.p" link brings leads to seemingly gibberish data.
+   But peak hell sounds a lot like 'pickle'...

@@ -1,0 +1,24 @@
+Examining the page source reveals an HTML tag, <peakhell>, that points to a
+banner.p file. Loading this file with PycURL and running it through the pickle
+module (peak hell... pickle...) leaves us with a list of lists of 2-element tuples.
+Each tuple has either a space or hash character and an integer.
+
+Here are the first few inner lists for reference:
+   
+   [(' ', 95)]
+   [(' ', 14), ('#', 5), (' ', 70), ('#', 5), (' ', 1)]
+   [(' ', 15), ('#', 4), (' ', 71), ('#', 4), (' ', 1)]
+   [(' ', 15), ('#', 4), (' ', 71), ('#', 4), (' ', 1)]
+   [(' ', 15), ('#', 4), (' ', 71), ('#', 4), (' ', 1)]
+   [(' ', 15), ('#', 4), (' ', 71), ('#', 4), (' ', 1)]
+   [(' ', 15), ('#', 4), (' ', 71), ('#', 4), (' ', 1)]
+   [(' ', 15), ('#', 4), (' ', 71), ('#', 4), (' ', 1)]
+   [(' ', 15), ('#', 4), (' ', 71), ('#', 4), (' ', 1)]
+
+The object represents a bitmap. Each inner list represents a single
+line on the screen (where unpickled[0] == top line ==  (y = 0) in graphics).
+The first element of the tuple is which character to print and the second
+element is how many repetitions.
+
+Printing each scanline produces the word 'channel', in all its ASCII art glory.
+
